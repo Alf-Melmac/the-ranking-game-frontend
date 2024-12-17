@@ -1,5 +1,5 @@
 import {JSX, useState} from 'react';
-import {Avatar, Box, Button, Card, Center, Container, Group, Stack, Text, Transition} from '@mantine/core';
+import {Avatar, Box, Button, Card, Center, Group, Stack, Text, Transition} from '@mantine/core';
 import classes from './EndScreen.module.css';
 import {useTimeout} from '@mantine/hooks';
 import {useNavigate} from 'react-router';
@@ -102,11 +102,9 @@ function EndRoundScreenWitData({question, scores}: Readonly<Result>): JSX.Elemen
 			</Transition>
 		</Box>
 
-		<Container>
-			{scores.slice(3).map((score, i) => <SchlechteSpieler key={score.player} score={score} place={i + 4}/>)}
-		</Container>
+		{scores.slice(3).map((score, i) => <SchlechteSpieler key={score.player} score={score} place={i + 4}/>)}
 
-		<NextRoundButton showAfter={((scores.length + 1) * TRANSITION_DELAY) + 3500}/>
+		<NextRoundButton showAfter={((scores.length + 1) * TRANSITION_DELAY) + 3500} isEnd={!question}/>
 	</Stack>;
 }
 
@@ -140,9 +138,10 @@ function SchlechteSpieler({score, place}: Readonly<SchlechteSpielerProps>): JSX.
 
 type NextRoundButtonProps = {
 	showAfter: number;
+	isEnd: boolean;
 }
 
-function NextRoundButton({showAfter}: Readonly<NextRoundButtonProps>): JSX.Element {
+function NextRoundButton({showAfter, isEnd}: Readonly<NextRoundButtonProps>): JSX.Element {
 	const [open, setOpen] = useState(false);
 	useTimeout(() => setOpen(true), showAfter, {autoInvoke: true});
 
@@ -153,6 +152,9 @@ function NextRoundButton({showAfter}: Readonly<NextRoundButtonProps>): JSX.Eleme
 		duration={400}
 		timingFunction={'ease'}
 	>
-		{(styles) => <Button style={styles} onClick={() => navigate('/host/next-round')}>Nächste Runde</Button>}
+		{(styles) => <Button style={styles}
+							 onClick={() => navigate(isEnd ? '/' : '/host/next-round')}>
+			Nächste Runde
+		</Button>}
 	</Transition>;
 }

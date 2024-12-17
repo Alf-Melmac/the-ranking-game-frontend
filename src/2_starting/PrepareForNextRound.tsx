@@ -15,11 +15,11 @@ export function PrepareForNextRound(): JSX.Element {
 	const {mutate} = useMutation<string | null, Error>({
 		mutationFn: startGame,
 		onSuccess: (data) => {
-			if (data === null) {
+			if (data) {
+				setStartIn(dayjs.utc(data).diff(dayjs.utc()));
+			} else {
 				navigate('/results/game');
-				return;
 			}
-			data && setStartIn(dayjs.utc(data).diff(dayjs.utc()));
 		},
 	});
 

@@ -14,6 +14,15 @@ const apiClient = axios.create({
 	withXSRFToken: import.meta.env.DEV ? true : undefined,
 });
 
+apiClient.interceptors.response.use(
+	(response) => response,
+	(error) => {
+		if (error?.response?.status === 418) {
+			window.location.replace(location.origin);
+		}
+	},
+);
+
 export default apiClient;
 
 export function voidFunction() {
