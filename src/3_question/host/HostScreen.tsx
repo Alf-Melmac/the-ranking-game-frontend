@@ -1,4 +1,4 @@
-import {JSX, useEffect} from 'react';
+import {JSX, useEffect, useState} from 'react';
 import {Text} from '@mantine/core';
 import {CountdownCircleTimer} from 'react-countdown-circle-timer';
 import {useNavigate} from 'react-router';
@@ -13,13 +13,16 @@ export function HostScreen(): JSX.Element {
 	const navigate = useNavigate();
 	useTimeout(() => navigate('/results'), ROUND_DURATION_MS, {autoInvoke: true});
 
+	const [minTime, setMinTime] = useState(false);
+	useTimeout(() => setMinTime(true), 2000, {autoInvoke: true}); // workaround: delay until question is probably loaded
+
 	const {gameId} = useGameContext();
 	const {question} = useQuestionContext();
 	const getFastFinish = () => apiClient.get(`/game/${gameId}/question/${question?.id}/fast-forward`).then((res) => res.data);
 	const {data} = useQuery<boolean, Error>({
 		queryKey: ['fast-finish', gameId],
 		queryFn: getFastFinish,
-		enabled: !!question,
+		enabled: !!question && minTime,
 		retry: false,
 		refetchInterval: 1000,
 		gcTime: 0,
