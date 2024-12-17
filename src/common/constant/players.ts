@@ -1,3 +1,15 @@
+import simon from './people/simon.jpg';
+import tim from './people/tim.jpg';
+import alina from './people/alina.jpg';
+import stephan from './people/stephan.jpg';
+import konsi from './people/konsi.jpg';
+import selina from './people/selina.jpg';
+import giuliano from './people/giuliano.jpg';
+import niko from './people/niko.jpg';
+import jonte from './people/jonte.jpg';
+import yasmin from './people/yasmin.jpg';
+import lea from './people/lea.jpg';
+
 export type Player = {
 	name: string;
 	avatar: string;
@@ -6,47 +18,47 @@ export type Player = {
 export const players: Player[] = [
 	{
 		name: 'Alina',
-		avatar: 'https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-6.png',
+		avatar: alina,
 	},
 	{
 		name: 'Giuliano',
-		avatar: 'https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-4.png',
+		avatar: giuliano,
 	},
 	{
 		name: 'Jonte',
-		avatar: 'https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-3.png',
+		avatar: jonte,
 	},
 	{
 		name: 'Konsi',
-		avatar: 'https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-1.png',
+		avatar: konsi,
 	},
 	{
 		name: 'Lea',
-		avatar: 'https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-8.png',
+		avatar: lea,
 	},
 	{
 		name: 'Niko',
-		avatar: 'https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-10.png',
+		avatar: niko,
 	},
 	{
 		name: 'Selina',
-		avatar: 'https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-7.png',
+		avatar: selina,
 	},
 	{
 		name: 'Simon',
-		avatar: 'https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-2.png',
+		avatar: simon,
 	},
 	{
 		name: 'Stephan',
-		avatar: 'https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-2.png',
+		avatar: stephan,
 	},
 	{
 		name: 'Tim',
-		avatar: 'https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-9.png',
+		avatar: tim,
 	},
 	{
 		name: 'Yasmin',
-		avatar: 'https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-5.png',
+		avatar: yasmin,
 	},
 ];
 

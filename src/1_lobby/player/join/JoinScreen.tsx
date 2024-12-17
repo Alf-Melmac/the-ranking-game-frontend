@@ -94,7 +94,7 @@ function PlayerSelect({value, defaultValue, onChange}: Readonly<PlayerSelectProp
 										 variant={_value === player ? 'outline' : 'subtle'}
 										 size={'xl'}
 										 onClick={() => handleChange(player)}
-										 leftSection={<Avatar src={player.avatar}/>}>
+										 leftSection={<Avatar src={player.avatar} size={'lg'}/>}>
 			{player.name}
 		</Button>)}
 	</SimpleGrid>;
