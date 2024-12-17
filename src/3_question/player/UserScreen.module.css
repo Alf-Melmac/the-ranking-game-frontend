@@ -1,0 +1,16 @@
+.rankee {
+	&[data-first] {
+		color: var(--mantine-color-dark-8);
+		background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFAC 0%, #cfcf8b 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+	}
+
+	&[data-second] {
+		color: var(--mantine-color-dark-8);
+		background: radial-gradient(ellipse farthest-corner at right bottom, #C0C0C0 0%, #B0B0B0 8%, #A0A0A0 30%, #909090 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #E0E0E0 8%, #C0C0C0 25%, #A0A0A0 62.5%, #909090 100%);
+	}
+
+	&[data-third] {
+		color: var(--mantine-color-dark-8);
+		background: radial-gradient(ellipse farthest-corner at right bottom, #CD7F32 0%, #C07030 8%, #A06028 30%, #805020 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #e88c32 0%, #ff9a37 8%, #CD7F32 25%, #8B4513 62.5%, #8B4513 100%);
+	}
+}

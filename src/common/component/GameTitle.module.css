@@ -1,0 +1,17 @@
+@keyframes glow {
+	from {
+		text-shadow: 0 0 20px #b100e8;
+	}
+	to {
+		text-shadow: 0 0 30px #d100d1, 0 0 10px #e500a4;
+	}
+}
+
+.titleText {
+	font-size: calc(var(--mantine-font-size-xl) * 3);
+	font-weight: 900;
+	text-transform: uppercase;
+	animation: glow 2s ease-in-out infinite alternate;
+	text-align: center;
+	line-height: 4rem;
+}
